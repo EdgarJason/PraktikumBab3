@@ -1,0 +1,112 @@
+import java.util.Scanner;
+
+public class HitungLuas {
+    public static void main(String[] args) {
+
+        //PROGRAM MEMBUAT MENU PENGHITUNGAN VOLUME
+        //MADE BY EDGAR JASON HUSIN
+        //245150201111047
+        //KELAS F - TIF
+
+        Scanner scan  = new Scanner(System.in);
+
+        int pilihan;
+
+        do {
+            System.out.println("==================================================");
+            System.out.println("PROGRAM MENGHITUNG LUAS");
+            System.out.println(
+            """
+            MENU
+            0. KELUAR
+            1. HITUNG VOLUME BALOK
+            2. HITUNG VOLUME BOLA
+            3. HITUNG VOLUME KERUCUT
+            4. HITUNG VOLUME SILINDER
+            5. HITUNG VOLUME LIMAS SEGITIGA
+            """);
+
+            System.out.print("Masukkan pilihan Anda = ");
+            pilihan = scan.nextInt();
+            System.out.println("==================================================");
+
+            switch (pilihan) {
+                //untuk keluar loop
+                case 0 -> {
+                    System.out.println("Program Dihentikan! Terima kasih!");
+                }
+
+                //menghitung volume balok
+                case 1 -> {
+                    double p,l,t;
+                    System.out.println("Anda memilih penghitungan volume balok");
+                    System.out.print("Masukkan panjang  = ");
+                    p = scan.nextInt();
+                    System.out.print("Masukkan lebar    = ");
+                    l = scan.nextInt();
+                    System.out.print("Masukkan tinggi   = ");
+                    t = scan.nextInt();
+                    double vblk = p*l*t;
+                    System.out.printf("Hasil = %.2f cm3 %n",vblk);
+                }
+
+                //menghitung volume bola
+                case 2 -> {
+                    double r;
+                    System.out.println("Anda memilih penghitungan volume bola");
+                    System.out.print("Masukkan jari-jari = ");
+                    r = scan.nextFloat();
+                    double vbl = (4*(3.14*r*r*r))/3;
+                    System.out.printf("Hasil = %.2f cm3 %n",vbl);
+                }
+
+                //menghitung volume kerucut
+                case 3 -> {
+                    double rad,tl;
+                    System.out.println("Anda memilih penghitungan volume kerucut");
+                    System.out.print("Masukkan jari-jari  = ");
+                    rad = scan.nextFloat();
+                    System.out.print("Masukkan tinggi     = ");
+                    tl = scan.nextFloat();
+                    double vkr = (3.14*rad*rad*tl)/3;
+                    System.out.printf("Hasil = %.2f cm3 %n",vkr);
+                }
+
+                //menghitung volume silinder
+                case 4 -> {
+                    double rd,tb;
+                    System.out.println("Anda memilih penghitungan volume silinder");
+                    System.out.print("Masukkan jari-jari  = ");
+                    rd = scan.nextFloat();
+                    System.out.print("Masukkan tinggi     = ");
+                    tb = scan.nextFloat();
+                    double vsl = 3.14*rd*rd*tb;
+                    System.out.printf("Hasil = %.2f cm3 %n",vsl);
+                }
+
+                //menghitung volume limas segitiga
+                case 5 -> {
+                    double alas, ts, ta;
+                    System.out.println("Anda memilih penghitungan volume limas segitiga");
+                    System.out.print("Masukkan alas segitiga = ");
+                    alas = scan.nextFloat();
+                    System.out.print("Masukkan tinggi limas  = ");
+                    ts = scan.nextFloat();
+                    System.out.print("Masukkan tinggi alas   = ");
+                    ta = scan.nextFloat();
+                    double vls = ((0.5*alas*ta)*ts)/3;
+                    System.out.printf("Hasil = %.2f cm3 %n",vls);
+                }
+
+                //kasus jika menginput angka jika diluar menu
+                default -> {
+                    System.out.println("Pilihan tidak valid! Silahkan Coba Kembali.");
+                }
+
+            }
+        }
+
+        //selama tidak diinput nol, maka do while akan jalan terus
+        while(pilihan != 0);
+    }
+}
