@@ -1,0 +1,68 @@
+public class PembuatNama {
+    public static void main(String[] args) {
+
+        //PROGRAM PEMBUAT NAMA
+        //MADE BY EDGAR JASON HUSIN
+        //245150201111047
+        //KELAS F - TIF
+
+        //mencetak J
+        int h = 6, w = 9;
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++){
+                if(i < h - 1) {
+                    if (j < w -1) {
+                        System.out.print(" ");
+                    } else {
+                        System.out.print("J");
+                    }
+                } else {
+                    if (j%2==0 || j < 1){
+                        System.out.print(" ");
+                    }
+                    else{
+                        System.out.print("J");
+                    }
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("");
+
+
+        //mencetak A
+        int heightA=5;
+
+        for (int i = 1; i <= heightA; i++) {
+            for (int j = 1; j <= heightA - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= i; j++) {
+                if ((i == 3 && j == 2) || (i == 5 && (j >= 2 && j <= 4))) {
+                    System.out.print("  ");
+                    continue;
+                }
+                System.out.print("A ");
+            }
+
+            System.out.println();
+        }
+
+        System.out.println();
+
+
+        //mencetak s
+        for (int i = 0; i < 7; i++) {
+            if (i == 0 || i == 3 || i == 6) {
+                System.out.println(" SSSSS ");
+            } else if (i == 1 || i == 2) {
+                System.out.println("S      ");
+            } else {
+                System.out.println("      S");
+            }
+        }
+
+
+    }
+}
